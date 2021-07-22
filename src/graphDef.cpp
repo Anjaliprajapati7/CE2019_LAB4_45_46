@@ -1,3 +1,4 @@
+#include <iostream>
 #include "graphDec.hpp"
 
 using std::cout;

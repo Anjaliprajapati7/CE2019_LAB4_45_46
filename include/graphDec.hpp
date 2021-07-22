@@ -1,6 +1,8 @@
 #pragma once
 
-class Graph::public AbstractGraph{
+#include "abstractGraph.hpp"
+
+class Graph:public AbstractGraph{
 public:
     bool isEmpty() const = 0;
     bool isDirected() const = 0;
