@@ -10,9 +10,9 @@ using std::list;
 
 struct Vertex
 {
-    int value;
-    list<int> neighbours;
-    unordered_map<int, list<int> > um;
+    int value; // stores the value of vertex
+    list<int> neighbours; // stores all the neighbours of vertex in a list format
+    unordered_map<int, list<int> > um; // maps vertex and its neighbours
     Vertex():value(NULL), neighbours(NULL), um(NULL){}
 };
 
