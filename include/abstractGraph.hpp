@@ -26,9 +26,9 @@ public:
     virtual void removeEdge(Vertex v1, Vertex v2) = 0;
     virtual int numVertices() const = 0;
     virtual int numEdges() const = 0;
-    virtual int indegree(Vertex v) const = 0;
-    virtual int outdegree(Vertex v) const = 0;
-    virtual int degree(Vertex v) const = 0;
-    virtual list<int> neighbours(Vertex v) const = 0;
+    virtual int indegree(Vertex v1) const = 0;
+    virtual int outdegree(Vertex v1) const = 0;
+    virtual int degree(Vertex v1) const = 0;
+    virtual list<int> neighbours(Vertex v1) const = 0;
     virtual bool neighbour(Vertex v1, Vertex v2) const = 0;
 };
