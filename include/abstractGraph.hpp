@@ -8,6 +8,8 @@ struct Vertex
 {
     int value = NULL; // stores the value of vertex
     List neighbours; // stores all the neighbours of vertex in a list format
+    Vertex *next; // points to next vertex to form a linked list
+    Vertex(){}
     Vertex(int value, List neighbours){
         this->value = value;
         this->neighbours = neighbours;
