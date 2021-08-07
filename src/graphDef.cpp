@@ -2,8 +2,8 @@
 #include "graphDec.hpp"
 
 bool Graph::isEmpty() const{
-    // if occupied == 0 return true
-    if (this->occupied == 0) return true;
+    // if HEAD == nullptr return true
+    if (HEAD == nullptr) return true;
     else return false;
 }
 
@@ -15,81 +15,33 @@ bool Graph::isDirected() const{
 }
 
 void Graph::addVertex(Vertex newVertex){
-    // add the vertex at new position in v array
-    this->v[this->occupied] = newVertex;
-    this->occupied++;
+    // add new vertex and point its next to HEAD
+    // then point the HEAD to the address of new vertex
+
 }
 
 void addEdge(Vertex v1, Vertex v2){
-    // add the edge to the list of v1
-    for (size_t i = 0; i <= this->occupied; i++)
-    {
-        if (v[i].value == v1.value)
-        {
-            v[i].neighbours.push_back(v2.value);
-        }
-    }
+    // add the edge to the list of associated vertex
+
 }
 
 void Graph::removeVertex(Vertex vertexToRemove){
-    // remove the vertex at v[position] and also
-    // remove all other occurances of vertex from the list of neighbours
-    for (size_t i = 0; i < this->occupied; i++)
-    {
-        if (v[i].value == vertexToRemove.value)
-        {
-            v[i].value = v[occupied].value;
-            v[i].neighbours = v[occupied].neighbours;
-            v[i].um = v[occupied].um;
-
-            v[occupied].value = NULL;
-            v[occupied].neighbours.clear();
-            v[occupied].um.clear();
-
-            this->occupied--;
-
-            // if (i != this->occupied)
-            // {
-            //     for (size_t j = i; j <= occupied; j++)
-            //     {
-            //         v[j].value = v[j+1].value;
-            //         v[j].neighbours = v[j+1].neighbours;
-            //         v[j].um = v[j+1].um;
-            //     }
-                
-            // }
-            
-        }
-        
-    }
-    
+    // delete the Vertex and also 
+    // remove all the occurances of the value from neighbours of other vertices    
 }
 
 void Graph::removeEdge(Vertex v1, Vertex v2){
-    // remove the element from the list of neighbours of v1
-    for (size_t i = 0; i <= occupied; i++)
-    {
-        if (v[i].value == v1.value){
-            v1.neighbours.remove(v2.value);
-        }
-    }
+    // remove the element from the list of neighbours of associated vertex
     
 }
 
 int Graph::numVertices() const{
-    // get all the vertices from array v that are not NULL
-    return occupied + 1;
+    // return size of Graph
 }
 
 
 int Graph::numEdges() const{
-    // get sum of all the list associated with array v
-    unsigned int sum = 0;
-    for (size_t i = 0; i <= occupied; i++)
-    {
-        sum += v[i].neighbours.size();
-    }
-    return sum;
+    // sum of all the neighbour lists
 }
 
 
@@ -101,14 +53,6 @@ int Graph::indegree(Vertex v1) const{
 
 int Graph::outdegree(Vertex v1) const{
     // size of neighbour list
-    for (size_t i = 0; i <= occupied; i++)
-    {
-        if (v[i].value == v1.value)
-        {
-            return v[i].neighbours.size();
-        }
-    }
-    return 0;
 }
 
 int Graph::degree(Vertex v1) const{
@@ -118,40 +62,8 @@ int Graph::degree(Vertex v1) const{
 
 List Graph::neighbours(Vertex v1) const{
     // return the neighbour list associated with the vertex
-    for (size_t i = 0; i <= occupied; i++)
-    {
-        if (v[i].value == v1.value)
-        {
-            return v[i].neighbours;
-        }
-    }
-    return {NULL};
 }
 
 bool Graph::neighbour(Vertex v1,Vertex v2) const{
     // returns true if v2 exists in neighbour list of v1 and vice versa
-    for (size_t i = 0; i <= occupied; i++)
-    {
-        if (v[i].value == v1.value)
-        {
-            for (auto &&i : v[i].neighbours)
-            {
-                if (i == v2.value)
-                {
-                    return true;
-                }
-            }
-        }
-        else if (v[i].value == v2.value)
-        {
-            for (auto &&i : v[i].neighbours)
-            {
-                if (i == v1.value)
-                {
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
 }

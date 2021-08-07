@@ -7,7 +7,7 @@
 class Graph:public AbstractGraph{
 private:
     Vertex v[MAX_SIZE];
-    unsigned int occupied = 0; // no. of spaces occupied in v
+    Vertex *HEAD = nullptr;
 public:
     bool isEmpty() const = 0;
     bool isDirected() const = 0;
