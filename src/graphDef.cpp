@@ -3,7 +3,7 @@
 
 bool Graph::isEmpty() const{
     // if HEAD == nullptr return true
-    if (HEAD == nullptr && size == 0) return true;
+    if (HEAD == nullptr && graphSize == 0) return true;
     else return false;
 }
 
@@ -22,13 +22,13 @@ void Graph::addVertex(Vertex newVertex){
     newV->neighbours = newVertex.neighbours;
     newV->next = HEAD;
     HEAD = newV;
-    size++;
+    graphSize++;
 }
 
 void Graph::addEdge(Vertex v1, Vertex v2){
     // add the edge to the list of associated vertex
     Vertex *temp = HEAD;
-    for (size_t i = 0; i < size; i++)
+    for (size_t i = 0; i < graphSize; i++)
     {
         if (v1.value == temp->value)
         {
@@ -51,20 +51,20 @@ void Graph::removeVertex(Vertex vertexToRemove){
     {
         delete HEAD;
         HEAD = nullptr;
-        size = 0;
+        graphSize = 0;
     }
     else
     {
         Vertex *temp, *prev;
         prev = HEAD;
         temp = HEAD->next;
-        for (size_t i = 0; i < size; i++)
+        for (size_t i = 0; i < graphSize; i++)
         {
             if (vertexToRemove.value == temp->value)
             {
                 prev->next = temp->next;
                 delete temp;
-                size--;
+                graphSize--;
                 break;
             }
             else

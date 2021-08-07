@@ -5,7 +5,7 @@
 class Graph : public AbstractGraph{
 private:
     Vertex *HEAD = nullptr;
-    unsigned int size = 0;
+    unsigned int graphSize = 0;
 public:
     bool isEmpty() const override;
     bool isDirected() const override;
