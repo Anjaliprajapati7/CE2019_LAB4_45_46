@@ -8,6 +8,7 @@ class List
 private:
     Node *HEAD;
     Node *TAIL;
+    int listSize;
 public:
     List(){
         HEAD = nullptr;
@@ -24,4 +25,5 @@ public:
     bool search(int data);
     Node *retrieve(int data);
     void traverse();
+    int size();
 };

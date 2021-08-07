@@ -20,6 +20,7 @@ void List::addToHead(int data){
     newNode->next = HEAD;
     HEAD = newNode;
     if (TAIL == nullptr) TAIL = HEAD;
+    listSize++;
 };
 void List::addToTail(int data){
     if (HEAD == nullptr){
@@ -31,12 +32,14 @@ void List::addToTail(int data){
     newNode->next = nullptr;
     TAIL->next = newNode;
     TAIL = TAIL->next;
+    listSize++;
 };
 void List::add(int data, Node *predecessor){
     Node *newNode = new Node();
     newNode->info = data;
     newNode->next = predecessor->next;
     predecessor->next = newNode;
+    listSize++;
 };
 void List::removeFromHead(){
     if (!isEmpty()){
@@ -45,6 +48,7 @@ void List::removeFromHead(){
         HEAD = nodeToDelete->next;
         delete nodeToDelete;
         if (HEAD == nullptr) TAIL = nullptr;
+        listSize--;
     }
 };
 void List::removeFromTail(){
@@ -57,6 +61,7 @@ void List::removeFromTail(){
             pred = pred->next;
         TAIL = pred;
         pred->next = nullptr;
+        listSize--;
     }
 };
 void List::remove(int data){
@@ -78,6 +83,7 @@ void List::remove(int data){
             if (temp != nullptr){
                 prev->next = temp->next;
                 delete temp;
+                listSize--;
                 if (prev->next == nullptr) TAIL = prev;
             }
         }
@@ -121,4 +127,8 @@ void List::traverse(){
         }
         cout << endl;
     }
+};
+
+int List::size(){
+    return listSize;
 };
