@@ -51,6 +51,7 @@ void Graph::removeVertex(Vertex vertexToRemove){
     {
         delete HEAD;
         HEAD = nullptr;
+        size = 0;
     }
     else
     {
@@ -63,6 +64,7 @@ void Graph::removeVertex(Vertex vertexToRemove){
             {
                 prev->next = temp->next;
                 delete temp;
+                size--;
                 break;
             }
             else

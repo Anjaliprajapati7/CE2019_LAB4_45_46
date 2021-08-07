@@ -11,5 +11,7 @@ int main(){
     v1.value = 5;
     g1.addVertex(v1);
     cout << g1.isEmpty() << endl;
+    g1.removeVertex(v1);
+    cout << g1.isEmpty() << endl;
     return 0;
 }
