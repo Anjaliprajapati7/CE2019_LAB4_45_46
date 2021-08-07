@@ -8,7 +8,7 @@ class List
 private:
     Node *HEAD;
     Node *TAIL;
-    int listSize;
+    int listSize = 0;
 public:
     List(){
         HEAD = nullptr;

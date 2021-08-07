@@ -85,7 +85,7 @@ void Graph::removeEdge(Vertex v1, Vertex v2){
 
 int Graph::numVertices() const{
     // return size of Graph
-    return 0;
+    return graphSize;
 }
 
 
@@ -103,6 +103,19 @@ int Graph::indegree(Vertex v1) const{
 
 int Graph::outdegree(Vertex v1) const{
     // size of neighbour list
+    Vertex *temp = HEAD;
+    for (size_t i = 0; i < graphSize; i++)
+    {
+        if (temp->value == v1.value)
+        {
+            return temp->neighbours.size();
+        }
+        else
+        {
+            temp = temp->next;
+        }
+        
+    }
     return 0;
 }
 
@@ -119,5 +132,18 @@ List Graph::neighbours(Vertex v1) const{
 
 bool Graph::neighbour(Vertex v1,Vertex v2) const{
     // returns true if v2 exists in neighbour list of v1 and vice versa
-    return true;
+    Vertex *temp = HEAD;
+    for (size_t i = 0; i < graphSize; i++)
+    {
+        if (v1.value == temp->value)
+        {
+            return temp->neighbours.search(v2.value);
+        }
+        else
+        {
+            temp = temp->next;
+        }
+        
+    }
+    return false;
 }
