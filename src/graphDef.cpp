@@ -1,9 +1,6 @@
 #include <iostream>
 #include "graphDec.hpp"
 
-using std::cout;
-using std::endl;
-
 bool Graph::isEmpty() const{
     // if occupied == 0 return true
     if (this->occupied == 0) return true;
@@ -23,7 +20,7 @@ void Graph::addVertex(Vertex newVertex){
     this->occupied++;
 }
 
-void Graph::addEdge(Vertex v1, Vertex v2){
+void addEdge(Vertex v1, Vertex v2){
     // add the edge to the list of v1
     for (size_t i = 0; i <= this->occupied; i++)
     {
@@ -119,7 +116,7 @@ int Graph::degree(Vertex v1) const{
     return indegree(v1)+outdegree(v1);
 }
 
-list<int> Graph::neighbours(Vertex v1) const{
+List Graph::neighbours(Vertex v1) const{
     // return the neighbour list associated with the vertex
     for (size_t i = 0; i <= occupied; i++)
     {
@@ -132,7 +129,7 @@ list<int> Graph::neighbours(Vertex v1) const{
 }
 
 bool Graph::neighbour(Vertex v1,Vertex v2) const{
-	// returns true if v2 exists in neighbour list of v1 and vice versa
+    // returns true if v2 exists in neighbour list of v1 and vice versa
     for (size_t i = 0; i <= occupied; i++)
     {
         if (v[i].value == v1.value)

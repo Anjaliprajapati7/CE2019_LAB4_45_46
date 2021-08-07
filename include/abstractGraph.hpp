@@ -2,18 +2,16 @@
 
 #pragma once
 
-#include <unordered_map>
-#include <list>
-
-using std::unordered_map;
-using std::list;
+#include <list.hpp>
 
 struct Vertex
 {
-    int value; // stores the value of vertex
-    list<int> neighbours; // stores all the neighbours of vertex in a list format
-    unordered_map<int, list<int> > um; // maps vertex and its neighbours
-    Vertex():value(NULL), neighbours(NULL), um(NULL){}
+    int value = NULL; // stores the value of vertex
+    List neighbours; // stores all the neighbours of vertex in a list format
+    Vertex(int value, List neighbours){
+        this->value = value;
+        this->neighbours = neighbours;
+    }
 };
 
 class AbstractGraph{
@@ -29,6 +27,6 @@ public:
     virtual int indegree(Vertex v1) const = 0;
     virtual int outdegree(Vertex v1) const = 0;
     virtual int degree(Vertex v1) const = 0;
-    virtual list<int> neighbours(Vertex v1) const = 0;
+    virtual List neighbours(Vertex v1) const = 0;
     virtual bool neighbour(Vertex v1, Vertex v2) const = 0;
 };

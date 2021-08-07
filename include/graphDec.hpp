@@ -20,6 +20,6 @@ public:
     int indegree(Vertex v1) const = 0;
     int outdegree(Vertex v1) const = 0;
     int degree(Vertex v1) const = 0;
-    list<int> neighbours(Vertex v1) const = 0;
+    List neighbours(Vertex v1) const = 0;
     bool neighbour(Vertex v1, Vertex v2) const = 0;
 };
