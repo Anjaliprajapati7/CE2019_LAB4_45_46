@@ -18,6 +18,7 @@ struct Vertex
 
 class AbstractGraph{
 public:
+
     virtual bool isEmpty() const = 0;
     virtual bool isDirected() const = 0;
     virtual void addVertex(Vertex newVertex) = 0;

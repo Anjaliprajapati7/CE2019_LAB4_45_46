@@ -96,11 +96,10 @@ bool List::search(int data){
     while (temp->info != data){
         temp = temp->next;
         if (temp == nullptr) {
-            cout << "Not found!" << endl;
+            
             return false;
         }
     }
-    cout << "Found!" << endl;
     return true;
 };
 
@@ -132,3 +131,6 @@ void List::traverse(){
 int List::size(){
     return listSize;
 };
+Node* List::getHead(){
+    return HEAD;
+}

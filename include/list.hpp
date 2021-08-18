@@ -26,4 +26,5 @@ public:
     Node *retrieve(int data);
     void traverse();
     int size();
+    Node *getHead();
 };
