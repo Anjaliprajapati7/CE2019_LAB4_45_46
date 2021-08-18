@@ -1,17 +1,17 @@
 #include <iostream>
-#include<istream>
-#include<set>
-#include<ctime>
+#include <set>
+#include <ctime>
 #include "graphDec.hpp"
 
 using std::cout;
 using std::endl;
 using std::set;
 
+// bonus question
 Graph randomGen(){
     Graph g;
     Vertex v1, v2, v3, v4, v5;
-    set<int> randSet;
+    set<int> randSet; // using set for unique vertices
     srand(time(NULL));
     while (randSet.size() < 5)
     {
@@ -47,7 +47,7 @@ Graph randomGen(){
 
 int main(){
 
-    Graph g1;//assuming it is an undirected graph
+    Graph g1; //assuming it is an undirected graph
     cout << g1.isEmpty() << endl;
 
     Vertex v1, v2, v3,v4,v5;
@@ -57,7 +57,7 @@ int main(){
     v4.value = 8;
     v5.value = 9;
 
-        v2.neighbours.addToHead(5);
+    v2.neighbours.addToHead(5);
     v2.neighbours.addToHead(7);
     v2.neighbours.addToHead(9);
     v3.neighbours.addToHead(9);
