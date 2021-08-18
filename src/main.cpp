@@ -48,7 +48,7 @@ Graph randomGen(){
 int main(){
 
     Graph g1;//assuming it is an undirected graph
-    cout << g1.isEmpty() << endl;
+    cout << "init isEmpty"<<g1.isEmpty() << endl;
 
     Vertex v1, v2, v3,v4,v5;
     v1.value = 5;
